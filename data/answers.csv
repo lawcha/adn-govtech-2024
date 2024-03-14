@@ -1,12 +1,12 @@
-﻿level,question_id,type,answer
-0,0,text,"Yes, I live in Switzerland."
-0,0,text,"No, I don't live in Switzerland."
-1,1,text,I am moving to Switzerland and want to bring my pet with me.
-1,1,text,I am going to holidays in Switzerland with my pet.
-1,2,text,I am going on holidays with my pet.
-1,2,text,I am coming back to Switzerland from holidays with my pet.
-2,3,text,A cat.
-2,3,text,A dog.
-3,4,text,Less than 7 months.
-3,4,text,More than 7 months.
-4,5,country,
+﻿id,level,question_id,type,answer
+0,0,0,text,"Yes, I live in Switzerland."
+1,0,0,text,"No, I don't live in Switzerland."
+2,1,1,text,I am moving to Switzerland and want to bring my pet with me.
+3,1,1,text,I am going to holidays in Switzerland with my pet.
+4,1,2,text,I am going on holidays with my pet.
+5,1,2,text,I am coming back to Switzerland from holidays with my pet.
+6,2,3,text,A cat.
+7,2,3,text,A dog.
+8,3,4,text,Less than 7 months.
+9,3,4,text,More than 7 months.
+10,4,5,country,
