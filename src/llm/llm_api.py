@@ -1,9 +1,9 @@
 import os
 from fastapi import FastAPI
 from langchain.chat_models import ChatOpenAI
+from fastapi import APIRouter
 #from langchain.schema import SystemMessage, HumanMessage
 from langchain.prompts import SystemMessagePromptTemplate, HumanMessagePromptTemplate, ChatPromptTemplate
-
 from dotenv import load_dotenv
 
 #from ...src.request_schema import LLMRequest, LLMResponse
@@ -21,9 +21,9 @@ load_dotenv()
 
 OPENAI_API_KEY = os.environ['OPENAI_API_KEY']
 
-app = FastAPI()
+router = APIRouter()
 
-@app.post("/llm", response_model = LLMResponse)
+@router.post("/llm", response_model = LLMResponse)
 def llm(request: LLMRequest) -> LLMResponse:
 
     llm = ChatOpenAI(
