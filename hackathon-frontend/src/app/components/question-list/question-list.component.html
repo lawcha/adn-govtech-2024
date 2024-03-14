@@ -1,0 +1,4 @@
+<app-question *ngFor="let question of questionList"
+              [question]="question"
+              (onCompleted)="onCompleted()">
+</app-question>
