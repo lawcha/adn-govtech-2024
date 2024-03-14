@@ -1,0 +1,84 @@
+country,risk_level
+Austria,NO_RISK
+Belgium,NO_RISK
+Bulgaria,NO_RISK
+Cyprus,NO_RISK
+Czech Republic,NO_RISK
+Germany,NO_RISK
+Denmark,NO_RISK
+Estonia,NO_RISK
+Spain,NO_RISK
+Finland,NO_RISK
+France,NO_RISK
+Greece,NO_RISK
+Croatia,NO_RISK
+Hungary,NO_RISK
+Ireland,NO_RISK
+Italy,NO_RISK
+Lithuania,NO_RISK
+Luxembourg,NO_RISK
+Latvia,NO_RISK
+Malta,NO_RISK
+Netherlands,NO_RISK
+Poland,NO_RISK
+Portugal,NO_RISK
+Romania,NO_RISK
+Sweden,NO_RISK
+Slovenia,NO_RISK
+Slovakia,NO_RISK
+Andorra,NO_RISK
+Switzerland,NO_RISK
+Faroe Islands,NO_RISK
+Gibraltar,NO_RISK
+Greenland,NO_RISK
+Iceland,NO_RISK
+Liechtenstein,NO_RISK
+Monaco,NO_RISK
+Northern Ireland,NO_RISK
+Norway,NO_RISK
+San Marino,NO_RISK
+Vatican City,NO_RISK
+Ascension,LOW_RISK
+United Arab Emirates,LOW_RISK
+Antigua and Barbuda,LOW_RISK
+Argentina,LOW_RISK
+Australia,LOW_RISK
+Aruba,LOW_RISK
+Bosnia and Herzegovina,LOW_RISK
+Barbados,LOW_RISK
+Bahrain,LOW_RISK
+Bermuda,LOW_RISK
+"Bonaire, St. Eustatius, and Saba",LOW_RISK
+Belarus,LOW_RISK
+Canada,LOW_RISK
+Chile,LOW_RISK
+Curaçao,LOW_RISK
+Fiji,LOW_RISK
+Falkland Islands,LOW_RISK
+United Kingdom,LOW_RISK
+Hong Kong,LOW_RISK
+Jamaica,LOW_RISK
+Japan,LOW_RISK
+St. Kitts and Nevis,LOW_RISK
+Cayman Islands,LOW_RISK
+St. Lucia,LOW_RISK
+North Macedonia,LOW_RISK
+Montserrat,LOW_RISK
+Mauritius,LOW_RISK
+Mexico,LOW_RISK
+Malaysia,LOW_RISK
+New Caledonia,LOW_RISK
+New Zealand,LOW_RISK
+French Polynesia,LOW_RISK
+St. Pierre and Miquelon,LOW_RISK
+Russia,LOW_RISK
+Singapore,LOW_RISK
+St. Helena,LOW_RISK
+Sint Maarten,LOW_RISK
+Trinidad and Tobago,LOW_RISK
+Taiwan,LOW_RISK
+United States of America,LOW_RISK
+St. Vincent and the Grenadines,LOW_RISK
+British Virgin Islands,LOW_RISK
+Vanuatu,LOW_RISK
+Wallis and Futuna,LOW_RISK
