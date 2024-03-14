@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, List, Dict
+from pydantic import BaseModel
 
 class LLMRequest(BaseModel):
     query: str
