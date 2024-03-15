@@ -1,6 +1,6 @@
 import { QuestionWithAnswersModel } from './question-with-answers.model';
 import { question1, question2, question3, question4 } from './questions';
-import { answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8 } from './answers';
+import { answer1, answer10, answer2, answer3, answer4, answer5, answer6, answer7, answer8, answer9 } from './answers';
 
 export const questionAnswer1: QuestionWithAnswersModel = {
   question: question1,
@@ -14,10 +14,10 @@ export const questionAnswer2: QuestionWithAnswersModel = {
 
 export const questionAnswer3: QuestionWithAnswersModel = {
   question: question3,
-  answers: [answer5, answer6]
+  answers: [answer7, answer8]
 }
 
 export const questionAnswer4: QuestionWithAnswersModel = {
   question: question4,
-  answers: [answer7, answer8]
+  answers: [answer9, answer10]
 }
