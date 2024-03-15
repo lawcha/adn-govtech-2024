@@ -7,15 +7,15 @@ from fastapi import APIRouter, Query, HTTPException
 
 router = APIRouter()
 myDict = {
-    9650: "usecase1",
-    9740: "usecase2",
-    8721: "usecase3"
+    129650: "usecase1",
+    109740: "usecase2",
+    118721: "usecase3"
 }
 
 
 @router.get("/content")
 def get_content(answerIds: Annotated[Union[List[int], None], Query()] = None):
-    if len(answerIds) != 4:
+    if len(answerIds) != 5:
         raise HTTPException(status_code=400, detail="not enought answer")
     key = 0
     for idx, x in enumerate(answerIds):
