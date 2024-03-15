@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AnswerModel } from '../../model/answer.model';
 
 @Component({
   selector: 'app-card',
@@ -8,8 +9,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
+  @Input() answer?: AnswerModel;
   @Input() image?: string;
-  @Input() answer?: string;
+  @Input() answerString?: string;
 
 	onClick() {
 

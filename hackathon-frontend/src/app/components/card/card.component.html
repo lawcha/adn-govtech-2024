@@ -1,5 +1,7 @@
-<div (click)="onClick()"
-     class="p-4 flex flex-col items-center ring-1 ring-amber-50 hover:ring-amber-600 dark:hover:ring-amber-600 focus-visible:ring-amber-600 focus-visible:border-solid justify-center rounded-lg border border-solid bg-white dark:bg-white cursor-pointer dark:focus:ring-orange-800 focus:ring-orange-800">
-  <img [src]="image">
-  <span class="dark:text-space-blue font-body text-body-l pt-2 justify-center">{{answer}}</span>
+<div class="ring-1 ring-amber-50 hover:ring-amber-600 dark:hover:ring-amber-600 focus-visible:ring-amber-600 focus-visible:border-solid justify-center rounded-lg border border-solid bg-white dark:bg-white cursor-pointer dark:focus:ring-orange-800 focus:ring-orange-800">
+  <label [for]="answer?.id" class="p-4 cursor-pointer flex flex-col items-center ">
+    <img [src]="'assets/' + answer?.id + '.svg'">
+    <span class="dark:text-space-blue font-body text-body-l pt-2 justify-center">{{answer?.answer}}</span>
+    <input [id]="answer?.id" [name]="answer?.question_id" type="radio" (click)="onClick()" />
+  </label>
 </div>

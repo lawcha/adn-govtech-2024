@@ -4,6 +4,7 @@ export enum TypeEnum {
 }
 
 export interface AnswerModel {
+  id: number;
   level: number;
   question_id: number;
   type: TypeEnum
