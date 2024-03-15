@@ -1,8 +1,12 @@
 import pandas as pd
+import os
+from .qa_request import QaRequest
+print(__file__)
+df_answers = pd.read_csv(os.path.join(os.path.dirname(__file__), "data/answers.csv"))
+df_questions = pd.read_csv(os.path.join(os.path.dirname(__file__),"data/questions.csv"), index_col="id")
+from fastapi import APIRouter
 
-df_answers = pd.read_csv("../data/answers.csv")
-df_questions = pd.read_csv("../data/questions.csv", index_col="id")
-
+router = APIRouter()
 
 def get_next_question(answer):
     next_possible_questions = df_questions[df_questions["level"] == answer.level + 1]
@@ -17,9 +21,9 @@ def get_next_question(answer):
 def get_answers(question):
     return df_answers[df_answers["question_id"] == question.name]
 
-
-def get_next_question_and_answers(answer_id):
-    answer = df_answers.iloc[answer_id]
+@router.post("/qa")
+def get_next_question_and_answers(request:QaRequest):
+    answer = df_answers.iloc[request.answerId]
     next_question = get_next_question(answer)
     next_answers = get_answers(next_question)
     return {"question": next_question.to_json(),
