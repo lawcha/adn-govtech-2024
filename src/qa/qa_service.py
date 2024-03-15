@@ -27,8 +27,14 @@ def get_answers(question):
 
 @router.post("/qa")
 def get_next_question_and_answers(request: QaRequest):
-    answer = df_answers.iloc[request.answers[-1]]
-    next_question = get_next_question(answer)
-    next_answers = get_answers(next_question)
+    if len(request.answers):
+        next_question = df_questions[df_questions["level"] == 0].squeeze(axis=0)
+        next_answers = get_answers(next_question)
+    else:
+        answer = df_answers.iloc[request.answers[-1]]
+        next_question = get_next_question(answer)
+        next_answers = get_answers(next_question)
+
     return {"question": next_question.to_dict(),
             "answers": next_answers.reset_index().to_dict(orient="records")}
+
