@@ -1,1 +1,2 @@
 curl -X POST -H "Content-Type: application/json" -d @sample_query_3.json http://localhost:5002/llm
+curl -X POST -H "Content-Type: application/json" -d @sample_query_3.json http://localhost:8080/llm
