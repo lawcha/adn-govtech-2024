@@ -15,7 +15,7 @@ myDict = {
 
 @router.get("/content")
 def get_content(answerIds: Annotated[Union[List[int], None], Query()] = None):
-    if len(answerIds) != 4:
+    if len(answerIds) != 5:
         raise HTTPException(status_code=400, detail="not enought answer")
     key = 0
     for idx, x in enumerate(answerIds):
