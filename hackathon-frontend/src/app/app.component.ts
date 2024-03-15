@@ -30,7 +30,7 @@ export class AppComponent {
   }
 
   test() {
-    this.dao.fetchNextQuestion([
+    this.dao.fetchResults([
       {
         selectedAnswerId: 0,
         answers: [],
@@ -43,6 +43,16 @@ export class AppComponent {
       },
       {
         selectedAnswerId: 6,
+        answers: [],
+        question: { question: '', id: 0, level: 0 }
+      },
+      {
+        selectedAnswerId: 9,
+        answers: [],
+        question: { question: '', id: 0, level: 0 }
+      },
+      {
+        selectedAnswerId: 12,
         answers: [],
         question: { question: '', id: 0, level: 0 }
       }

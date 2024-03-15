@@ -14,9 +14,11 @@ export class DaoService {
   http: HttpClient = inject(HttpClient);
 
   fetchNextQuestion(history: QuestionWithAnswersModel[]): Observable<QuestionWithAnswersModel> {
+    console.log(history);
     const answers = {
       answers: history.map(e => e.selectedAnswerId)
     }
+    console.log(answers);
     return this.http.post<QuestionWithAnswersModel>(`${DaoService.API_ROOT}/qa`, answers);
   }
 

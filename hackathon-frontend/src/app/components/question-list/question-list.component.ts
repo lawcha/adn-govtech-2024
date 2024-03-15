@@ -36,13 +36,18 @@ export class QuestionListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // Fetch first question
-    this.daoService.fetchNextQuestion(this.questionList);
+    this.daoService.fetchNextQuestion(this.questionList).subscribe((res) => {
+      this.questionList.push(res);
+      //this.historyStoreService.pushHistory(res);
+    });
   }
 
   onCompleted(answer: QuestionWithAnswersModel): void {
     // Register state
     this.historyStoreService.pushHistory(answer);
+    this.questionList = this.historyStoreService.getHistory();
     // Request next question
+    console.log(answer);
     this.subscriptions.push(this.daoService.fetchNextQuestion(this.questionList).subscribe(question => {
       // Add new question to GUI
       this.questionList.push(question);
