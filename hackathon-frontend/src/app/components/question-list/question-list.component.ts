@@ -1,10 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { QuestionComponent } from '../question/question.component';
-import { QuestionModel } from '../../model/question.model';
-import { AnswerModel } from '../../model/answer.model';
 import { HistoryStoreService } from '../../services/history-store.service';
 import { QuestionWithAnswersModel } from '../../model/question-with-answers.model';
 import { DaoService } from '../../services/dao.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-question-list',
@@ -15,20 +14,27 @@ import { DaoService } from '../../services/dao.service';
   templateUrl: './question-list.component.html',
   styleUrl: './question-list.component.scss'
 })
-export class QuestionListComponent {
+export class QuestionListComponent implements OnDestroy {
+
+  readonly subscriptions: Subscription[] = [];
 
   historyStoreService: HistoryStoreService = inject(HistoryStoreService);
   daoService: DaoService = inject(DaoService);
 
   questionList: QuestionWithAnswersModel[] = [];
 
+  ngOnDestroy() {
+    this.subscriptions.forEach(s => s.unsubscribe());
+  }
+
   onCompleted(answer: QuestionWithAnswersModel): void {
     // Register state
     this.historyStoreService.pushHistory(answer);
     // Request next question
-    const nextQuestion = this.daoService.fetchNextQuestion(answer.selectedAnswerId!!);
-    // Add new question to GUI
-    this.questionList.push(nextQuestion);
+    this.subscriptions.push(this.daoService.fetchNextQuestion(answer.selectedAnswerId!!).subscribe(question => {
+      // Add new question to GUI
+      this.questionList.push(question);
+    }));
   }
 
 }
