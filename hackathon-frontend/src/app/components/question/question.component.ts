@@ -54,7 +54,7 @@ export class QuestionComponent {
 				this.selectedAnswer = {
 					level: 4,
 					question_id: 5,
-					answer: 'NO_RISK',
+					answer: 'Germany',
 					id: 10,
 					type: TypeEnum.COUNTRY
 				};
@@ -63,7 +63,7 @@ export class QuestionComponent {
 				this.selectedAnswer = {
 					level: 4,
 					question_id: 5,
-					answer: 'HIGH_RISK',
+					answer: 'Thailand',
 					id: 12,
 					type: TypeEnum.COUNTRY
 				};
@@ -72,7 +72,7 @@ export class QuestionComponent {
 				this.selectedAnswer = {
 					level: 4,
 					question_id: 5,
-					answer: 'LOW_RISK',
+					answer: 'USA',
 					id: 11,
 					type: TypeEnum.COUNTRY
 				};
@@ -81,7 +81,7 @@ export class QuestionComponent {
 				this.selectedAnswer = {
 					level: 4,
 					question_id: 5,
-					answer: 'NO_RISK',
+					answer: 'Switzerland',
 					id: 10,
 					type: TypeEnum.COUNTRY
 				};

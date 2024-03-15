@@ -26,5 +26,5 @@ def get_content(answerIds: Annotated[Union[List[int], None], Query()] = None):
             os.path.join(os.path.dirname(__file__), "data/{}.csv".format(myDict[key])))
     except:
         raise HTTPException(status_code=400, detail="unknown answer path")
-    result = df_content.to_json(orient="records")
+    result = df_content.to_dict(orient="records")
     return result
