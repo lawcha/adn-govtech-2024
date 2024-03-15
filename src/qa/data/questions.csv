@@ -1,7 +1,7 @@
 ﻿id,level,answer_id,question
 0,0,,Do you live in Switzerland?
-1,1,0,What scenario are you in?
-2,1,1,What scenario are you in?
+1,1,0,Which reason applies to you?
+2,1,1,Which reason applies to you?
 3,2,,What animal are you bringing with you?
-4,3,,What's its age?
+4,3,,When was your animal born?
 5,4,,What country was the animal in?
