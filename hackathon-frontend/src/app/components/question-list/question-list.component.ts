@@ -4,6 +4,7 @@ import { HistoryStoreService } from '../../services/history-store.service';
 import { QuestionWithAnswersModel } from '../../model/question-with-answers.model';
 import { DaoService } from '../../services/dao.service';
 import { Subscription } from 'rxjs';
+import { questionAnswer1, questionAnswer2, questionAnswer3 } from '../../model/question-with-answer';
 
 @Component({
   selector: 'app-question-list',
@@ -11,6 +12,7 @@ import { Subscription } from 'rxjs';
   imports: [
     QuestionComponent
   ],
+  providers: [HistoryStoreService, DaoService],
   templateUrl: './question-list.component.html',
   styleUrl: './question-list.component.scss'
 })
@@ -23,7 +25,7 @@ export class QuestionListComponent implements OnDestroy {
   historyStoreService: HistoryStoreService = inject(HistoryStoreService);
   daoService: DaoService = inject(DaoService);
 
-  questionList: QuestionWithAnswersModel[] = [];
+  questionList: QuestionWithAnswersModel[] = [questionAnswer1, questionAnswer2, questionAnswer3];
 
   ngOnDestroy() {
     this.subscriptions.forEach(s => s.unsubscribe());
