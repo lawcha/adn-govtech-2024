@@ -4,7 +4,6 @@
 	<app-country-dropdown></app-country-dropdown>
 
 	<app-survey-started class="flex flex-col items-center"></app-survey-started>
-  <app-question [questionWithAnswersModel]="mockedModel[0]"></app-question>
   <app-question-list></app-question-list>
   <app-results *ngIf="survey.length > 0" [survey]="survey"></app-results>
 
