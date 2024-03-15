@@ -15,6 +15,9 @@ export class HistoryStoreService {
   getHistory(): Array<QuestionWithAnswersModel> {
     return this.history;
   }
+  setHistory(history: Array<QuestionWithAnswersModel>): void {
+     this.history = history;
+  }
   getLast(): QuestionWithAnswersModel | undefined {
     return this.history.at(-1);
   }

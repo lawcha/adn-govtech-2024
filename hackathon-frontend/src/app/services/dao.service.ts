@@ -23,6 +23,7 @@ export class DaoService {
   }
 
   fetchResults(history: QuestionWithAnswersModel[]): Observable<ResultModel[]> {
+    console.log(history);
     const answerIdList = history.map(question => question.selectedAnswerId!!);
     return this.http.get<ResultModel[]>(`${DaoService.API_ROOT}/content?answerIds=${answerIdList.join('&answerIds=')}`);
   }
