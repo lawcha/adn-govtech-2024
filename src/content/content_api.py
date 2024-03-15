@@ -18,9 +18,11 @@ def get_content(answerIds: Annotated[Union[List[int], None], Query()] = None):
     key = 0
     for idx, x in enumerate(answerIds):
         key = key + pow(10, idx) * x
-    print(myDict.get(key))
     #dynamically load content
-    df_content = pd.read_csv(os.path.join(os.path.dirname(__file__), "data/{}.csv".format(myDict[key])))
+    try:
+        df_content = pd.read_csv(os.path.join(os.path.dirname(__file__), "data/{}.csv".format(myDict[key])))
+    except:
+        raise HTTPException(status_code=400, detail="unknown answer path")
     result = df_content.to_json(orient="records")
     return result
 
