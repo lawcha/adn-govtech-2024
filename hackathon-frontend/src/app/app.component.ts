@@ -8,11 +8,12 @@ import { QuestionListComponent } from './components/question-list/question-list.
 import { HistoryStoreService } from './services/history-store.service';
 import { DaoService } from './services/dao.service';
 import { SurveyStartedComponent } from './components/survey-started/survey-started.component';
+import { CountryDropdownComponent } from './components/country-dropdown/country-dropdown.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, QuestionComponent, ResultsComponent, QuestionListComponent, SurveyStartedComponent],
+  imports: [RouterOutlet, QuestionComponent, ResultsComponent, QuestionListComponent, SurveyStartedComponent, CountryDropdownComponent],
   providers: [HistoryStoreService, DaoService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
