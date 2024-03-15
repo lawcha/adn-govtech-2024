@@ -33,7 +33,7 @@ export class QuestionListComponent implements OnDestroy {
     // Register state
     this.historyStoreService.pushHistory(answer);
     // Request next question
-    this.subscriptions.push(this.daoService.fetchNextQuestion(answer.selectedAnswerId!!).subscribe(question => {
+    this.subscriptions.push(this.daoService.fetchNextQuestion(this.questionList).subscribe(question => {
       // Add new question to GUI
       this.questionList.push(question);
       // If survey finished, show results
