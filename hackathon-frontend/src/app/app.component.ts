@@ -22,7 +22,6 @@ import { NgIf } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-	mockedModel = [questionAnswer1, questionAnswer2, questionAnswer3];
   survey: QuestionWithAnswersModel[] = [];
 
   readonly historyStoreService = inject(HistoryStoreService)

@@ -1,7 +1,11 @@
-<div class="p-4 flex flex-row items-center ring-1 ring-amber-50 hover:ring-amber-600 dark:hover:ring-amber-600 justify-center rounded-lg border border-solid bg-green-400">
-  <i>✓</i>
-  <div class="title-section"></div>
+<div
+  class="p-4 flex flex-row items-center ring-1 ring-amber-50 hover:ring-amber-600 dark:hover:ring-amber-600 justify-center rounded-lg border border-solid bg-orange-100">
+  <i *ngIf="!open">✓</i>
+  <div class="flex" [ngClass]="open ? 'flex-col' : ''">
+  <div class="title-section text-xl text-space-blue">{{title}}</div>
   <button (click)="openAccordion()">
-    <i>↓</i>
+    <i *ngIf="!open">↓</i>
   </button>
+  <p *ngIf="open" class="text-space-blue">{{content}}</p>
+  </div>
 </div>

@@ -3,9 +3,8 @@
 <div class="flex flex-col justify-center pt-16">
 
 	<app-survey-started class="flex flex-col items-center"></app-survey-started>
-<!--  <app-question [questionWithAnswersModel]="mockedModel[0]"></app-question>-->
   <app-question-list (onSurveyCompleted)="onSurveyCompleted()"></app-question-list>
-  <app-results *ngIf="finished"></app-results>
+  <app-results class="flex flex-col items-center" *ngIf="finished"></app-results>
 
   <div class="flex flex-row justify-between">
     <img class="flex w-96 justify-end" src="assets/Mountain1.svg">

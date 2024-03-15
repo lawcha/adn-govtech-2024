@@ -47,7 +47,6 @@ export class QuestionListComponent implements OnInit, OnDestroy {
     this.historyStoreService.pushHistory(answer);
     this.questionList = this.historyStoreService.getHistory();
     // Request next question
-    console.log(answer);
     this.subscriptions.push(this.daoService.fetchNextQuestion(this.questionList).subscribe(question => {
       // Add new question to GUI
       this.questionList.push(question);
