@@ -22,7 +22,7 @@ def get_answers(question):
 
 @router.post("/qa")
 def get_next_question_and_answers(request:QaRequest):
-    answer = df_answers.iloc[request.answerId]
+    answer = df_answers.iloc[request.answers[-1]]
     next_question = get_next_question(answer)
     next_answers = get_answers(next_question)
     return {"question": next_question.to_json(),
