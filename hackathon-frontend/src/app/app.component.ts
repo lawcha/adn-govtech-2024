@@ -23,8 +23,29 @@ export class AppComponent {
   survey: QuestionWithAnswersModel[] = [];
 
   readonly historyStoreService = inject(HistoryStoreService)
+  readonly dao = inject(DaoService)
 
   onSurveyCompleted(): void {
     this.survey = this.historyStoreService.getHistory();
+  }
+
+  test() {
+    this.dao.fetchNextQuestion([
+      {
+        selectedAnswerId: 0,
+        answers: [],
+        question: { question: '', id: 0, level: 0 }
+      },
+      {
+        selectedAnswerId: 5,
+        answers: [],
+        question: { question: '', id: 0, level: 0 }
+      },
+      {
+        selectedAnswerId: 6,
+        answers: [],
+        question: { question: '', id: 0, level: 0 }
+      }
+    ]).subscribe(e => console.log(e));
   }
 }
