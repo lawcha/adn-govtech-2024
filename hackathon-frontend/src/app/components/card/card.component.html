@@ -1,6 +1,6 @@
 <label [for]="answer?.id"
-       class="w-full p-4 cursor-pointer flex flex-col items-center ring-1 ring-amber-50 hover:ring-amber-600 dark:hover:ring-amber-600 justify-center rounded-lg border border-solid bg-white dark:bg-white cursor-pointer">
+       class="w-[195px] h-full p-4 cursor-pointer flex flex-col items-center ring-1 ring-amber-50 hover:ring-amber-600 dark:hover:ring-amber-600 justify-center rounded-lg border border-solid bg-white dark:bg-white cursor-pointer">
   <img [src]="'assets/' + answer?.id + '.svg'">
-  <span class="dark:text-space-blue font-body text-body-l pt-2 justify-center">{{ answer?.answer }}</span>
+  <span class="dark:text-space-blue font-body text-body-l py-2 justify-center text-center">{{ answer?.answer }}</span>
   <input [id]="answer?.id" [name]="answer?.question_id" type="radio" (click)="onClick()"/>
 </label>

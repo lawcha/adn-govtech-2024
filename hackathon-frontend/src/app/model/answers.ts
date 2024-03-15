@@ -44,7 +44,7 @@ export const answer6 : AnswerModel = {
   id: 5,
   level: 1,
   question_id: 2,
-  type: TypeEnum.COUNTRY,
+  type: TypeEnum.TEXT,
   answer: 'I am going to holidays in Switzerland with my pet.'
 }
 
@@ -52,7 +52,7 @@ export const answer7 : AnswerModel = {
   id: 6,
   level: 2,
   question_id: 3,
-  type: TypeEnum.COUNTRY,
+  type: TypeEnum.TEXT,
   answer: 'Cat'
 }
 
@@ -60,7 +60,7 @@ export const answer8 : AnswerModel = {
   id: 7,
   level: 2,
   question_id: 3,
-  type: TypeEnum.COUNTRY,
+  type: TypeEnum.TEXT,
   answer: 'Dog'
 }
 
@@ -68,13 +68,13 @@ export const answer9 : AnswerModel = {
   id: 8,
   level: 3,
   question_id: 4,
-  type: TypeEnum.COUNTRY,
+  type: TypeEnum.TEXT,
   answer: 'Less than 7 months ago'
 }
 export const answer10 : AnswerModel = {
   id: 9,
   level: 3,
   question_id: 4,
-  type: TypeEnum.COUNTRY,
+  type: TypeEnum.TEXT,
   answer: 'More than 7 months ago'
 }
