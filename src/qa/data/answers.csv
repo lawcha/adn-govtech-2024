@@ -9,4 +9,6 @@
 7,2,3,text,Dog.
 8,3,4,text,Less than 7 months ago.
 9,3,4,text,More than 7 months ago.
-10,4,5,country,
+10,4,5,country,NO_RISK
+11,4,5,country,LOW_RISK
+12,4,5,country,HIGH_RISK
