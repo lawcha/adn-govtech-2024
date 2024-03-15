@@ -1,7 +1,6 @@
 import pandas as pd
 import os
 from .qa_request import QaRequest
-print(__file__)
 df_answers = pd.read_csv(os.path.join(os.path.dirname(__file__), "data/answers.csv"))
 df_questions = pd.read_csv(os.path.join(os.path.dirname(__file__),"data/questions.csv"), index_col="id")
 from fastapi import APIRouter
