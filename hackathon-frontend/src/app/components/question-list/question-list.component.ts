@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, OnDestroy, Output } from '@angular/core';
+import { Component, EventEmitter, inject, OnDestroy, OnInit, Output } from '@angular/core';
 import { QuestionComponent } from '../question/question.component';
 import { HistoryStoreService } from '../../services/history-store.service';
 import { QuestionWithAnswersModel } from '../../model/question-with-answers.model';
@@ -17,7 +17,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './question-list.component.html',
   styleUrl: './question-list.component.scss'
 })
-export class QuestionListComponent implements OnDestroy {
+export class QuestionListComponent implements OnInit, OnDestroy {
+
+  private readonly TOTAL_QUESTION_NUMBER = 5;
 
   @Output() onSurveyCompleted: EventEmitter<void> = new EventEmitter<void>();
 
@@ -26,10 +28,15 @@ export class QuestionListComponent implements OnDestroy {
   historyStoreService: HistoryStoreService = inject(HistoryStoreService);
   daoService: DaoService = inject(DaoService);
 
-  questionList: QuestionWithAnswersModel[] = [questionAnswer1, questionAnswer2, questionAnswer3, questionAnswer4];
+  questionList: QuestionWithAnswersModel[] = [];
 
   ngOnDestroy() {
     this.subscriptions.forEach(s => s.unsubscribe());
+  }
+
+  ngOnInit() {
+    // Fetch first question
+    this.daoService.fetchNextQuestion(this.questionList);
   }
 
   onCompleted(answer: QuestionWithAnswersModel): void {
@@ -40,7 +47,9 @@ export class QuestionListComponent implements OnDestroy {
       // Add new question to GUI
       this.questionList.push(question);
       // If survey finished, show results
-      this.onSurveyCompleted.emit();
+      if (this.questionList.length === this.TOTAL_QUESTION_NUMBER) {
+        this.onSurveyCompleted.emit();
+      }
     }));
   }
 
