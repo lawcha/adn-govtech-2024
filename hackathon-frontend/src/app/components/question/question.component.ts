@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { ErrorComponent } from '../error/error.component';
-import { NgIf } from '@angular/common';
+import { CommonModule, NgForOf, NgIf } from '@angular/common';
+import { QuestionWithAnswersModel } from '../../model/question-with-answers.model';
 
 @Component({
   selector: 'app-question',
@@ -10,11 +11,13 @@ import { NgIf } from '@angular/common';
     CardComponent,
     ErrorComponent,
     NgIf,
+    NgForOf,
+    CommonModule
   ],
   templateUrl: './question.component.html',
   styleUrl: './question.component.scss'
 })
 export class QuestionComponent {
-  @Input() title?: string;
+  @Input() questionWithAnswersModel?: QuestionWithAnswersModel;
   answered = false;
 }
