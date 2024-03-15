@@ -1,0 +1,6 @@
+label:has(input[type=radio]:checked) {
+  --tw-ring-color: rgb(217 119 6);
+}
+input[type=radio]:focus {
+  outline: 0;
+}
