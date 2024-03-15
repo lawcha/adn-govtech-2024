@@ -2,19 +2,10 @@ import os
 from fastapi import FastAPI
 from langchain.chat_models import ChatOpenAI
 from fastapi import APIRouter
-#from langchain.schema import SystemMessage, HumanMessage
 from langchain.prompts import SystemMessagePromptTemplate, HumanMessagePromptTemplate, ChatPromptTemplate
 from dotenv import load_dotenv
 
-#from ...src.request_schema import LLMRequest, LLMResponse
-
-from pydantic import BaseModel
-
-class LLMRequest(BaseModel):
-    query: str
-
-class LLMResponse(BaseModel):
-    response: str
+from .request_schema import LLMRequest, LLMResponse
 
 # load env variables
 load_dotenv()
