@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { ErrorComponent } from '../error/error.component';
 import { CommonModule, NgForOf, NgIf } from '@angular/common';
 import { QuestionWithAnswersModel } from '../../model/question-with-answers.model';
+import { SurveyStartedComponent } from '../survey-started/survey-started.component';
 
 @Component({
   selector: 'app-question',
@@ -12,7 +13,8 @@ import { QuestionWithAnswersModel } from '../../model/question-with-answers.mode
     ErrorComponent,
     NgIf,
     NgForOf,
-    CommonModule
+    CommonModule,
+    SurveyStartedComponent
   ],
   templateUrl: './question.component.html',
   styleUrl: './question.component.scss'
