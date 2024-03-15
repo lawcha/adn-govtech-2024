@@ -5,12 +5,13 @@ import { QuestionWithAnswersModel } from '../../model/question-with-answers.mode
 import { DaoService } from '../../services/dao.service';
 import { Subscription } from 'rxjs';
 import { questionAnswer1, questionAnswer2, questionAnswer3 } from '../../model/question-with-answer';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-question-list',
   standalone: true,
   imports: [
-    QuestionComponent
+    QuestionComponent, CommonModule
   ],
   providers: [HistoryStoreService, DaoService],
   templateUrl: './question-list.component.html',

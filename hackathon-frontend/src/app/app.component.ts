@@ -7,11 +7,12 @@ import { QuestionWithAnswersModel } from './model/question-with-answers.model';
 import { QuestionListComponent } from './components/question-list/question-list.component';
 import { HistoryStoreService } from './services/history-store.service';
 import { DaoService } from './services/dao.service';
+import { SurveyStartedComponent } from './components/survey-started/survey-started.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, QuestionComponent, ResultsComponent, QuestionListComponent],
+  imports: [RouterOutlet, QuestionComponent, ResultsComponent, QuestionListComponent, SurveyStartedComponent],
   providers: [HistoryStoreService, DaoService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
