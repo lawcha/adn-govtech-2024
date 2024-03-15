@@ -4,7 +4,7 @@ import { HistoryStoreService } from '../../services/history-store.service';
 import { QuestionWithAnswersModel } from '../../model/question-with-answers.model';
 import { DaoService } from '../../services/dao.service';
 import { Subscription } from 'rxjs';
-import { questionAnswer1, questionAnswer2, questionAnswer3 } from '../../model/question-with-answer';
+import { questionAnswer1, questionAnswer2, questionAnswer3, questionAnswer4 } from '../../model/question-with-answer';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -26,7 +26,7 @@ export class QuestionListComponent implements OnDestroy {
   historyStoreService: HistoryStoreService = inject(HistoryStoreService);
   daoService: DaoService = inject(DaoService);
 
-  questionList: QuestionWithAnswersModel[] = [questionAnswer1, questionAnswer2, questionAnswer3];
+  questionList: QuestionWithAnswersModel[] = [questionAnswer1, questionAnswer2, questionAnswer3, questionAnswer4];
 
   ngOnDestroy() {
     this.subscriptions.forEach(s => s.unsubscribe());
