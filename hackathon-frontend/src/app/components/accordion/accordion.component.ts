@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { AccordionItemComponent } from '../accordion-item/accordion-item.component';
+import { ResultModel } from '../../model/result.model';
 
 @Component({
   selector: 'app-accordion',
@@ -11,6 +12,5 @@ import { AccordionItemComponent } from '../accordion-item/accordion-item.compone
   styleUrl: './accordion.component.scss'
 })
 export class AccordionComponent {
-  @Input() resultList: string[] = []; // TODO adapt with BE
-
+  @Input() resultList?: ResultModel[]
 }

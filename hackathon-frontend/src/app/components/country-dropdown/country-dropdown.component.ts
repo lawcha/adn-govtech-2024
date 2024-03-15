@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class CountryDropdownComponent {
 	@Output() onSelectCountry: EventEmitter<string> = new EventEmitter<string>();
 
-	countries = ['Switzerland', 'Germany', 'Thailand'];
+	countries = ['Switzerland', 'Germany', 'Thailand', 'USA'];
 
 	onCountryClick(country: string) {
 		this.onSelectCountry.emit(country);

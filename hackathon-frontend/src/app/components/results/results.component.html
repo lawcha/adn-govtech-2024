@@ -1,8 +1,17 @@
 <div
   class="p-4 flex flex-row items-center ring-1 ring-slate-300 justify-center rounded-lg border border-solid bg-white">
-  <h1 class="text-orange-700"></h1>
-  <h3>Passing through customs</h3>
-  <p>Please make sure your animal meets the following requirements:</p>
+  <div class="flex">
+    <img src="assets/stars.svg" />
+    <h1 class="text-orange-700"></h1>
+  </div>
+  <h3>Before your journey</h3>
+  <p>To bring a cat older than 7 months from Thailand to Switzerland requires several steps to ensure a smooth entry for your pet:</p>
 
-  <app-accordion [resultList]="results"></app-accordion>
+  <app-accordion *ngIf="(results$ | async) as results" [resultList]="results"></app-accordion>
+
+  <p>
+    Remember, the most reliable source for regulations is the Ordinance on the Import, Transit, and Export of Pet Animals
+    <a href="https://www.fedlex.admin.ch/eli/cc/2014/755/de">SR 916.443.14 - Verordnung vom 28. November 2014... | Fedlex (admin.ch)</a>
+    This document contains the legally binding information you need to ensure a smooth trip with your furry friend.
+  </p>
 </div>
