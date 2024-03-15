@@ -11,6 +11,8 @@ myDict = {
     9740: "usecase2",
     8721: "usecase3"
 }
+
+
 @router.get("/content")
 def get_content(answerIds: Annotated[Union[List[int], None], Query()] = None):
     if len(answerIds) != 4:
@@ -18,11 +20,11 @@ def get_content(answerIds: Annotated[Union[List[int], None], Query()] = None):
     key = 0
     for idx, x in enumerate(answerIds):
         key = key + pow(10, idx) * x
-    #dynamically load content
+    # dynamically load content
     try:
-        df_content = pd.read_csv(os.path.join(os.path.dirname(__file__), "data/{}.csv".format(myDict[key])))
+        df_content = pd.read_csv(
+            os.path.join(os.path.dirname(__file__), "data/{}.csv".format(myDict[key])))
     except:
         raise HTTPException(status_code=400, detail="unknown answer path")
     result = df_content.to_json(orient="records")
     return result
-
