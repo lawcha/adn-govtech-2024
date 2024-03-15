@@ -18,3 +18,9 @@ export const question3 : QuestionModel = {
   question: 'What animal are you bringing with you ?'
 }
 
+export const question4 : QuestionModel = {
+  level: 1,
+  id: 13,
+  question: 'When was your animal born ?'
+}
+
