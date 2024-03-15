@@ -13,9 +13,9 @@ export class CardComponent {
   @Input() image?: string;
   @Input() answerString?: string;
 
-  @Output() onSelectedAnswer: EventEmitter<number> = new EventEmitter<number>();
+  @Output() onSelectedAnswer: EventEmitter<AnswerModel> = new EventEmitter<AnswerModel>();
 
 	onClick() {
-    this.onSelectedAnswer.emit(this.answer?.id);
+    this.onSelectedAnswer.emit(this.answer);
 	}
 }
