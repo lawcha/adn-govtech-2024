@@ -7,9 +7,9 @@ from fastapi import APIRouter, Query, HTTPException
 
 router = APIRouter()
 myDict = {
-    9650: "usecase1",
-    9740: "usecase2",
-    8721: "usecase3"
+    129650: "usecase1",
+    109740: "usecase2",
+    118721: "usecase3"
 }
 
 
