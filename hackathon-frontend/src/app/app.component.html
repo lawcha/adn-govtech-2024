@@ -1,9 +1,14 @@
-<router-outlet />
+<router-outlet/>
 <h1 class="flex justify-center text-h2 text-orange-700">Pet Travel Check</h1>
 <div class="flex flex-col justify-center pt-16">
-<app-question [questionWithAnswersModel]="mockedModel"></app-question>
+  <app-question [questionWithAnswersModel]="mockedModel"></app-question>
+
+<!--  TODO Enable when ready-->
+<!--  <app-question-list (onSurveyCompleted)="onSurveyCompleted()"></app-question-list>-->
+  <app-results *ngIf="survey" [survey]="survey"></app-results>
+
   <div class="flex flex-row justify-between">
-  <img class="flex w-96 justify-end" src="assets/Mountain1.svg">
-  <img class="flex w-96 justify-end" src="assets/Mountain2.svg">
+    <img class="flex w-96 justify-end" src="assets/Mountain1.svg">
+    <img class="flex w-96 justify-end" src="assets/Mountain2.svg">
   </div>
 </div>

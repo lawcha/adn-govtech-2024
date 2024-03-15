@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy } from '@angular/core';
+import { Component, EventEmitter, inject, OnDestroy, Output } from '@angular/core';
 import { QuestionComponent } from '../question/question.component';
 import { HistoryStoreService } from '../../services/history-store.service';
 import { QuestionWithAnswersModel } from '../../model/question-with-answers.model';
@@ -15,6 +15,8 @@ import { Subscription } from 'rxjs';
   styleUrl: './question-list.component.scss'
 })
 export class QuestionListComponent implements OnDestroy {
+
+  @Output() onSurveyCompleted: EventEmitter<void> = new EventEmitter<void>();
 
   readonly subscriptions: Subscription[] = [];
 
@@ -34,6 +36,8 @@ export class QuestionListComponent implements OnDestroy {
     this.subscriptions.push(this.daoService.fetchNextQuestion(answer.selectedAnswerId!!).subscribe(question => {
       // Add new question to GUI
       this.questionList.push(question);
+      // If survey finished, show results
+      this.onSurveyCompleted.emit();
     }));
   }
 
