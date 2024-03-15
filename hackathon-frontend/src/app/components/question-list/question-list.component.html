@@ -1,4 +1,4 @@
 <app-question *ngFor="let question of questionList"
-              [question]="question"
-              (onCompleted)="onCompleted()">
+              [questionWithAnswersModel]="question"
+              (onCompleted)="onCompleted($event)">
 </app-question>
