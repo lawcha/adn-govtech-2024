@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AnswerModel } from '../../model/answer.model';
 
 @Component({
@@ -13,7 +13,9 @@ export class CardComponent {
   @Input() image?: string;
   @Input() answerString?: string;
 
-	onClick() {
+  @Output() onSelectedAnswer: EventEmitter<number> = new EventEmitter<number>();
 
+	onClick() {
+    this.onSelectedAnswer.emit(this.answer?.id);
 	}
 }
