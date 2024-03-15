@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { QuestionComponent } from './components/question/question.component';
+import { questionAnswer1 } from './model/question-with-answer';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,5 @@ import { QuestionComponent } from './components/question/question.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+	mockedModel = questionAnswer1;
 }
