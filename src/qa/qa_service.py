@@ -27,7 +27,7 @@ def get_answers(question):
 
 @router.post("/qa")
 def get_next_question_and_answers(request: QaRequest):
-    if len(request.answers):
+    if len(request.answers) == 0:
         next_question = df_questions[df_questions["level"] == 0].squeeze(axis=0)
         next_answers = get_answers(next_question)
     else:
