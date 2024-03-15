@@ -30,5 +30,5 @@ def get_next_question_and_answers(request: QaRequest):
     answer = df_answers.iloc[request.answers[-1]]
     next_question = get_next_question(answer)
     next_answers = get_answers(next_question)
-    return json.dumps({"question": next_question.to_json(),
-                       "answers": next_answers.reset_index().to_json(orient="records")})
+    return {"question": next_question.to_dict(),
+            "answers": next_answers.reset_index().to_dict(orient="records")}
