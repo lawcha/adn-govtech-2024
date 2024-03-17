@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { ErrorComponent } from '../error/error.component';
 import { CommonModule, NgForOf, NgIf } from '@angular/common';
@@ -6,6 +6,7 @@ import { QuestionWithAnswersModel } from '../../model/question-with-answers.mode
 import { SurveyStartedComponent } from '../survey-started/survey-started.component';
 import { AnswerModel, TypeEnum } from '../../model/answer.model';
 import { CountryDropdownComponent } from '../country-dropdown/country-dropdown.component';
+import { HistoryStoreService } from '../../services/history-store.service';
 
 @Component({
 	selector: 'app-question',
@@ -28,6 +29,8 @@ export class QuestionComponent {
 	selectedAnswer?: AnswerModel;
 	isErrorDisplayed = false;
 	isSubmitted = false;
+
+  historyService = inject(HistoryStoreService);
 
 	onNextQuestionClick() {
 		if (this.selectedAnswer && this.questionWithAnswersModel) {
@@ -89,4 +92,9 @@ export class QuestionComponent {
 		}
 
 	}
+
+  isSubmittedInHistory(): boolean {
+    return this.historyService.getHistory()
+      .findIndex(e => e.question.level === this.questionWithAnswersModel?.question.level) > -1;
+  }
 }

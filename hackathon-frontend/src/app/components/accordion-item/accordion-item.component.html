@@ -1,11 +1,10 @@
-<div
-  class="p-4 flex flex-row items-center ring-1 ring-amber-50 hover:ring-amber-600 dark:hover:ring-amber-600 justify-center rounded-lg border border-solid bg-orange-100">
-  <i *ngIf="!open">✓</i>
-  <div class="flex" [ngClass]="open ? 'flex-col' : ''">
-  <div class="title-section text-xl text-space-blue">{{title}}</div>
-  <button (click)="openAccordion()">
-    <i *ngIf="!open">↓</i>
-  </button>
-  <p *ngIf="open" class="text-space-blue">{{content}}</p>
+<div (click)="toggleAccordion()"
+     class="cursor-pointer px-6 gap-4 py-3 flex items-center flex-row ring-1 ring-amber-50 hover:ring-amber-600 dark:hover:ring-amber-600 rounded-lg border border-solid bg-orange-100">
+  <div class="rounded-full bg-green-300 w-[40px] h-[40px] flex items-center justify-center">✓</div>
+  <div class="title-section text-xl text-space-blue">{{ title }}</div>
+  <div>
+    <div class="p-2 float-right text-xl" *ngIf="!open">v</div>
+    <div class="p-2 self-end text-xl" *ngIf="open">^</div>
   </div>
 </div>
+<p *ngIf="open" class="p-2 text-space-blue">{{ content }}</p>

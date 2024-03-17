@@ -16,7 +16,7 @@ export class AccordionItemComponent {
   @Input() content?: string;
   open = false;
 
-  openAccordion() {
-   this.open = true;
+  toggleAccordion() {
+   this.open = !this.open;
   }
 }

@@ -45,13 +45,14 @@ export class QuestionListComponent implements OnInit, OnDestroy {
   onCompleted(answer: QuestionWithAnswersModel): void {
     // Register state
     this.historyStoreService.pushHistory(answer);
-    this.questionList = this.historyStoreService.getHistory();
+    this.questionList = [...this.historyStoreService.getHistory()];
+
     // Request next question
     this.subscriptions.push(this.daoService.fetchNextQuestion(this.questionList).subscribe(question => {
       // Add new question to GUI
       this.questionList.push(question);
       // If survey finished, show results
-      if (this.questionList.length === this.TOTAL_QUESTION_NUMBER) {
+      if (this.historyStoreService.getHistory().length === this.TOTAL_QUESTION_NUMBER) {
         this.onSurveyCompleted.emit();
       }
     }));
