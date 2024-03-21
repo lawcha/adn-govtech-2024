@@ -1,4 +1,7 @@
 # Pet Travail Check
+Preview:
+![](app_preview.mp4)
+
 ## How to execute the app
 ### Dependencies
  - Docker (https://docs.docker.com/desktop/install/windows-install/)
