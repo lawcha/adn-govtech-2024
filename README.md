@@ -5,7 +5,7 @@ https://github.com/lawcha/adn-govtech-2024/assets/71696298/13c99c1e-81d3-464e-95
 
 ## How to execute the app
 ### Dependencies
- - Docker (https://docs.docker.com/desktop/install/windows-install/)
+ - Docker (Windows: https://docs.docker.com/desktop/install/windows-install/, MacOS: https://docs.docker.com/desktop/install/mac-install/)
  - Node.JS + npm (https://nodejs.org/en/download/)
 ### Start the application
 Do to the following to run the backend and frontend services (in two separated terminals).
