@@ -1,6 +1,7 @@
 # Pet Travail Check
 Preview:
-![](app_preview.mp4)
+
+https://github.com/lawcha/adn-govtech-2024/assets/71696298/13c99c1e-81d3-464e-9562-d41bfe844e17
 
 ## How to execute the app
 ### Dependencies
